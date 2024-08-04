@@ -1,0 +1,30 @@
+<template>
+    <div class="product-cards">
+        <template if:true={productInfo} for:each={productInfo} for:item="product"> 
+            <div key={product.Id} class="slds-m-around_small">
+                <lightning-card variant="Narrow" title="Products" key={product.Id} class="product-card">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-1 image-container">
+                            <lightning-formatted-rich-text value={product.image__c}></lightning-formatted-rich-text>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 product-details">
+                            <p class="brandName slds-text-heading_small">{product.Brand_Name__c}</p>
+                            <p class="productName slds-text-heading_medium">{product.Name}</p>
+                            <p class="price slds-text-title">₹ {product.Price__c}</p>
+                            
+                            <div class="slds-col slds-size_1-of-1 button-group">
+                                <lightning-button variant="neutral" label="Add to Cart" onclick={handleAddToCart}></lightning-button>
+                               
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 button-group">
+                              
+                                <lightning-button variant="brand" label="View Product" onclick={handleViewProduct}></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+       
+    </div>
+</template>

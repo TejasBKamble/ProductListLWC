@@ -1,0 +1,30 @@
+<template>
+    <div class="product-cards">
+        <template if:true={productInfoIMG}>
+            <template for:each={productInfoIMG} for:item="product">
+                <div key={product.Id} class="slds-m-around_small" onclick={handleProductClick} data-product-id={product.Id}>
+                    <lightning-card variant="Narrow" title="Products" key={product.Id} class="product-card">
+                        <div class="slds-grid slds-wrap">
+                            <!-- Check if Product_Images__r is available and has data -->
+                            <template if:true={product.Product_Images__r}>
+                                <div class="slds-col slds-size_1-of-1 image-container">
+                                    <template for:each={product.Product_Images__r} for:item="image">
+                                        <img key={image.Id} src={image.ResourceURL__c} alt="Image Not Found">
+                                    </template>
+                                </div>
+                            </template>
+                            <div class="slds-col slds-size_1-of-1 product-details">
+                                <p class="brandName slds-text-heading_small">{product.Name}</p>
+                                <p class="productName slds-text-heading_medium">{product.Description}</p>
+                                <p class="brandName slds-text-heading_small">₹ {product.Price__c}</p>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+            </template>
+        </template>
+        <template if:false={productInfoIMG}>
+            <p>No products available.</p>
+        </template>
+    </div>
+</template>

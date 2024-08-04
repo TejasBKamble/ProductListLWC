@@ -1,0 +1,92 @@
+:host
+/* Style for the product cards container */
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Space between cards */
+    padding: 1rem;
+}
+
+/* Style for each product card */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    max-width: 300px; /* Fixed size for cards */
+    height: 100%; /* Ensure cards fill available height */
+    position: relative; /* Positioning context for buttons */
+    width: 100%;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Image container styles */
+.image-container {
+    
+    margin-bottom: 1rem; /* Space between image and details */
+
+    height: 200px; /* Adjust this value as needed */
+    overflow: hidden; /* Hide overflow to maintain container bounds */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center;
+}
+.product-image {
+    /* Make the image fill the container while maintaining aspect ratio */
+    width: 100%; /* Image width is 100% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.image-container lightning-formatted-rich-text {
+    width: 50%;
+    height: 50%; /* Adjust height based on image size */
+}
+
+/* Product details styles */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure the details fill the card height */
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Product name and details styling */
+.brandName {
+    font-weight: bold;
+    color: #333;
+}
+
+.productName {
+    font-size: 1.25rem;
+    color: #fc912e; /* Adjust color to match your theme */
+    margin: 0.5rem 0;
+}
+
+.price {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Push buttons to the bottom of the card */
+}
+
+.button-group lightning-button {
+    flex: 1; /* Ensure buttons are evenly spaced */
+    margin: 0 0.5rem; /* Space between buttons */
+}
+
