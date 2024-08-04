@@ -30,5 +30,5 @@ export default class ProductimagesLWC extends LightningElement {
         this.dispatchEvent(toastEvent);
     }
     
-
+    // Tejas First Update PUSH
 }
